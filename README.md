@@ -1,21 +1,9 @@
 # nuxt-amplify-bulist
 
-## Build Setup
+# インセプションデッキ
 
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-# bulist
+![Image 1](static/インセプションデッキ（bulist）.003.jpeg)
+![Image 2](static/インセプションデッキ（bulist）.004.jpeg)
+![Image 3](static/インセプションデッキ（bulist）.006.jpeg)
+![Image 4](static/インセプションデッキ（bulist）.007.jpeg)
+![Image 5](static/インセプションデッキ（bulist）.010.jpeg)
