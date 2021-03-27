@@ -1,14 +1,13 @@
 <template>
   <div>
-    <h1>TodoApp</h1>
-    <v-text-field v-model="name" label="Name"></v-text-field>
-    <v-text-field v-model="description" label="Description"></v-text-field>
-    <v-btn @click="createTodo">Create</v-btn>
-    <ul>
-      <li v-for="todo in todos" :key="todo.id">
-        {{ todo.name }} : {{ todo.description }}
-      </li>
-    </ul>
+    <div class="flexContainer">
+      <v-text-field v-model="name" label="買うもの" class="input"></v-text-field>
+      <v-btn @click="createTodo" class="mx-2 input" fab dark color="#4290FA">
+        <v-icon dark>mdi-plus</v-icon>
+      </v-btn>
+    </div>
+    <!-- <v-btn @click="createTodo">Create</v-btn> -->
+    <List :itemList="todos"></List>
   </div>
 </template>
 
@@ -17,6 +16,7 @@ import { API } from 'aws-amplify'
 import { createTodo } from '~/src/graphql/mutations'
 import { listTodos } from '~/src/graphql/queries'
 import { onCreateTodo } from '~/src/graphql/subscriptions'
+import { List } from "../components/List";
 
 export default {
   data() {
@@ -32,15 +32,15 @@ export default {
   },
   methods: {
     async createTodo() {
-      const { name, description } = this
-      if (!name || !description) return false
-      const todo = { name, description }
+      const { name } = this
+      const status = false
+      if (!name) return false
+      const item = { name ,status}
       await API.graphql({
         query: createTodo,
-        variables: { input: todo },
+        variables: { input: item },
       })
       this.name = ''
-      this.description = ''
     },
     async getTodos() {
       const todos = await API.graphql({
@@ -60,3 +60,14 @@ export default {
   },
 }
 </script>
+
+<style>
+.flexContainer{
+  /* font-size: 0; */
+  display: flex;
+}
+.input{
+  /* display: inline-block;
+  font-size: 16px; */
+}
+</style>

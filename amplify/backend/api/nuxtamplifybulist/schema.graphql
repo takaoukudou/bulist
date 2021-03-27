@@ -1,5 +1,8 @@
 type Todo @model {
   id: ID!
   name: String!
+  status: Boolean!
+  create_date: AWSDate
+  update_date: AWSDate
   description: String
 }

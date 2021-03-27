@@ -10,26 +10,25 @@ export const createTodo = /* GraphQL */ `
     createTodo(input: $input, condition: $condition) {
       id
       name
+      status
+      create_date
+      update_date
       description
       createdAt
       updatedAt
     }
   }
-`;
+`
 export const updateTodo = /* GraphQL */ `
   mutation UpdateTodo(
     $input: UpdateTodoInput!
     $condition: ModelTodoConditionInput
   ) {
     updateTodo(input: $input, condition: $condition) {
-      id
-      name
-      description
-      createdAt
-      updatedAt
+      status
     }
   }
-`;
+`
 export const deleteTodo = /* GraphQL */ `
   mutation DeleteTodo(
     $input: DeleteTodoInput!
@@ -38,9 +37,12 @@ export const deleteTodo = /* GraphQL */ `
     deleteTodo(input: $input, condition: $condition) {
       id
       name
+      status
+      create_date
+      update_date
       description
       createdAt
       updatedAt
     }
   }
-`;
+`
