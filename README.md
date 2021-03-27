@@ -1,4 +1,17 @@
-# nuxt-amplify-bulist
+### デプロイコマンド
+
+フロントエンド
+
+```
+nuxt generate
+amplify publish
+```
+
+バックエンド
+
+```
+amplify push
+```
 
 # インセプションデッキ
 
