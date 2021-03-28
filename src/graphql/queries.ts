@@ -8,11 +8,6 @@ export const getTodo = /* GraphQL */ `
       id
       name
       status
-      create_date
-      update_date
-      description
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -27,11 +22,6 @@ export const listTodos = /* GraphQL */ `
         id
         name
         status
-        create_date
-        update_date
-        description
-        createdAt
-        updatedAt
       }
       nextToken
     }

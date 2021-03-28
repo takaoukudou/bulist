@@ -8,39 +8,26 @@ export const onCreateTodo = /* GraphQL */ `
       id
       name
       status
-      create_date
-      update_date
-      description
       createdAt
       updatedAt
     }
   }
-`;
+`
 export const onUpdateTodo = /* GraphQL */ `
   subscription OnUpdateTodo {
     onUpdateTodo {
       id
       name
       status
-      create_date
-      update_date
-      description
-      createdAt
-      updatedAt
     }
   }
-`;
+`
 export const onDeleteTodo = /* GraphQL */ `
   subscription OnDeleteTodo {
     onDeleteTodo {
       id
       name
       status
-      create_date
-      update_date
-      description
-      createdAt
-      updatedAt
     }
   }
-`;
+`

@@ -3,7 +3,7 @@
 フロントエンド
 
 ```
-nuxt generate
+npm run generate
 amplify publish
 ```
 
