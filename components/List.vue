@@ -47,7 +47,14 @@ export default {
     async checkItem(item){
       const id = item.id;
       const status = item.status;
-      const param = {id,status}
+      const now = new Date();
+      let ttl;
+      if(status){
+        ttl = now.setDate(now.getDate() + 2);  
+      }else{
+        ttl = undefined;
+      }
+      const param = {id,status,ttl}
       await API.graphql({
         query: updateTodo,
         variables: {input:param},

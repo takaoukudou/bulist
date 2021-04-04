@@ -14,7 +14,7 @@
 <script>
 import { API } from 'aws-amplify'
 import { createTodo } from '~/src/graphql/mutations'
-import { listTodos } from '~/src/graphql/queries'
+import { listTodos, listItemsSortedByStatus } from '~/src/graphql/queries'
 import { onCreateTodo } from '~/src/graphql/subscriptions'
 import { List } from "../components/List";
 
@@ -29,6 +29,12 @@ export default {
   created() {
     this.getTodos()
     this.subscribe()
+    this.$nuxt.$on('reload', () => {
+      this.getTodos();
+    })
+  },
+  beforeDestroy () {
+    this.$nuxt.$off('reload')
   },
   methods: {
     async createTodo() {
@@ -47,6 +53,7 @@ export default {
         query: listTodos,
       })
       this.todos = todos.data.listTodos.items
+      this.sort();
     },
     subscribe() {
       API.graphql({ query: onCreateTodo }).subscribe({
@@ -57,6 +64,13 @@ export default {
         },
       })
     },
+    sort(){
+        this.todos.sort(function(a,b){
+            if(a.status < b.status) return -1;
+            if(a.status > b.status) return 1;
+            return 0;
+        });
+    }
   },
 }
 </script>

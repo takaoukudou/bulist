@@ -25,6 +25,7 @@ export const updateTodo = /* GraphQL */ `
       id
       name
       status
+      ttl
     }
   }
 `

@@ -27,7 +27,7 @@
     <v-app-bar :clipped-left="clipped" color="#FF9900" fixed app>
       <v-toolbar-title v-text="title" class="bar"/>
       <v-spacer />
-      <v-btn icon>
+      <v-btn @click="reload" icon>
         <v-icon color="white">mdi-reload</v-icon>
       </v-btn>
     </v-app-bar>
@@ -49,20 +49,10 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
-        },
-        {
           icon: 'mdi-chart-bubble',
           title: 'Index',
           to: '/index',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
-        },
+        }
       ],
       miniVariant: false,
       right: true,
@@ -70,6 +60,11 @@ export default {
       title: 'BULIST',
     }
   },
+  methods: {
+    reload () {
+      this.$nuxt.$emit('reload')
+    },
+  }
 }
 </script>
 
