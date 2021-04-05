@@ -9,8 +9,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - nuxt-amplify-bulist',
-    title: 'nuxt-amplify-bulist',
+    titleTemplate: '%s - Bulist',
+    title: 'Bulist',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -52,6 +52,7 @@ export default {
     manifest: {
       lang: 'en',
     },
+    icon: true,
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify

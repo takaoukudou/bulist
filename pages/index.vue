@@ -46,12 +46,14 @@ export default {
         query: createTodo,
         variables: { input: item },
       })
-      this.name = ''
+      this.name = '';
+      this.getTodos();
     },
     async getTodos() {
       const todos = await API.graphql({
         query: listTodos,
       })
+      console.log(todos)
       this.todos = todos.data.listTodos.items
       this.sort();
     },
