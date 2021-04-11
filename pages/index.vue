@@ -53,7 +53,6 @@ export default {
       const todos = await API.graphql({
         query: listTodos,
       })
-      console.log(todos)
       this.todos = todos.data.listTodos.items
       this.sort();
     },

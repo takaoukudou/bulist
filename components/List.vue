@@ -50,7 +50,7 @@ export default {
       const now = new Date();
       let ttl;
       if(status){
-        ttl = now.setDate(now.getDate() + 2);  
+        ttl = Math.floor((now.setDate(now.getDate() + 1)) / 1000);  
       }else{
         ttl = undefined;
       }
